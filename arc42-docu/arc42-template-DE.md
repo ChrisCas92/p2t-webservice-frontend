@@ -597,160 +597,70 @@ der online-Dokumentation (auf Englisch).
 
 <div class="formalpara-title">
 
-**Inhalt**
+### Architekturentscheidungen
 
-</div>
+In diesem Abschnitt werden die wichtigsten Architekturentscheidungen für das Projekt zur Erweiterung des WoPed-Clients um die Integration eines Large Language Models (LLM) dokumentiert. Jede Entscheidung wird begründet und es werden Alternativen sowie die jeweiligen Vor- und Nachteile abgewogen.
 
-Wichtige, teure, große oder riskante Architektur- oder
-Entwurfsentscheidungen inklusive der jeweiligen Begründungen. Mit
-"Entscheidungen" meinen wir hier die Auswahl einer von mehreren
-Alternativen unter vorgegebenen Kriterien.
+#### Entscheidung 1: Verwendung von React.js für die Web-Client-Entwicklung
 
-Wägen Sie ab, inwiefern Sie Entscheidungen hier zentral beschreiben,
-oder wo eine lokale Beschreibung (z.B. in der Whitebox-Sicht von
-Bausteinen) sinnvoller ist. Vermeiden Sie Redundanz. Verweisen Sie evtl.
-auf Abschnitt 4, wo schon grundlegende strategische Entscheidungen
-beschrieben wurden.
+**Begründung:**  
+React.js wurde aufgrund seiner Flexibilität, hohen Performance und großen Entwickler-Community ausgewählt. Es ermöglicht eine modulare Entwicklung und die Wiederverwendung von Komponenten, was die Wartbarkeit und Erweiterbarkeit des Projekts erleichtert.
 
-<div class="formalpara-title">
+**Alternativen:**
+- **Angular:**
+  - **Vorteile:** Umfangreiche Funktionen und ein komplettes Framework für die Entwicklung großer Anwendungen.
+  - **Nachteile:** Steilere Lernkurve und höhere Komplexität im Vergleich zu React.js.
+- **Vue.js:**
+  - **Vorteile:** Einfache Integration und geringere Lernkurve.
+  - **Nachteile:** Kleinere Community und weniger Unternehmensunterstützung im Vergleich zu React.js.
 
-**Motivation**
+**Fazit:**  
+React.js wurde gewählt, um die Entwicklung effizient und flexibel zu gestalten, während die große Entwickler-Community und die umfangreiche Dokumentation die Einarbeitung und Problemlösung unterstützen.
 
-</div>
+#### Entscheidung 2: Integration von REST-APIs für die Kommunikation mit Chat-GPT und P2T-Service
 
-Stakeholder des Systems sollten wichtige Entscheidungen verstehen und
-nachvollziehen können.
+**Begründung:**  
+Die Verwendung von REST-APIs ermöglicht eine standardisierte und plattformunabhängige Kommunikation zwischen den verschiedenen Diensten des Systems. REST ist weit verbreitet und gut dokumentiert, was die Implementierung und Wartung vereinfacht.
 
-<div class="formalpara-title">
+**Fazit:**  
+REST-APIs wurden aufgrund ihrer Einfachheit, Standardisierung und weiten Verbreitung gewählt. Sie bieten eine ausreichende Performance für die Anforderungen des Projekts und erleichtern die Integration mit bestehenden Systemen.
 
-**Form**
+#### Entscheidung 3: Nutzung von Node.js für serverseitige Logik
 
-</div>
+**Begründung:**  
+Node.js ermöglicht eine schnelle und effiziente serverseitige Entwicklung mit JavaScript, einer Sprache, die bereits für den Web-Client verwendet wird. Es bietet eine hohe Performance und eine große Anzahl von Bibliotheken, die die Entwicklung erleichtern.
 
-Verschiedene Möglichkeiten:
+**Fazit:**  
+Node.js wurde gewählt, um eine konsistente Entwicklungsumgebung mit JavaScript sowohl im Frontend als auch im Backend zu gewährleisten. Dies erleichtert die Entwicklung und Wartung des Systems und nutzt die Vorteile der vorhandenen JavaScript-Kenntnisse im Team.
 
--   ADR ([Documenting Architecture
-    Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions))
-    für jede wichtige Entscheidung
+#### Entscheidung 4: Verwendung von OAuth für Authentifizierung und Autorisierung
 
--   Liste oder Tabelle, nach Wichtigkeit und Tragweite der
-    Entscheidungen geordnet
+**Begründung:**  
+OAuth ist ein bewährtes und sicheres Protokoll für die Authentifizierung und Autorisierung. Es ermöglicht es, Benutzern sicheren Zugang zu gewähren, ohne ihre Anmeldeinformationen preiszugeben, und ist weit verbreitet in modernen Webanwendungen.
 
--   ausführlicher in Form einzelner Unterkapitel je Entscheidung
+**Fazit:**  
+OAuth wurde aufgrund seiner Flexibilität, Sicherheit und weiten Verbreitung gewählt. Es bietet eine robuste Lösung für die Authentifizierung und Autorisierung, die den Anforderungen des Projekts gerecht wird.
 
-Siehe [Architekturentscheidungen](https://docs.arc42.org/section-9/) in
-der arc42 Dokumentation (auf Englisch!). Dort finden Sie Links und
-Beispiele zum Thema ADR.
+#### Entscheidung 5: Einsatz von skalierbaren Cloud-Diensten (z.B. AWS oder Azure)
+
+**Begründung:**  
+Die Nutzung skalierbarer Cloud-Dienste ermöglicht es, das System flexibel an die Anforderungen anzupassen und bietet hohe Verfügbarkeit und Zuverlässigkeit. Cloud-Dienste bieten zudem umfangreiche Sicherheitsfunktionen und vereinfachen das Management der Infrastruktur.
+
+**Fazit:**  
+Skalierbare Cloud-Dienste wurden gewählt, um die Flexibilität, Skalierbarkeit und Zuverlässigkeit des Systems zu gewährleisten. Sie bieten die notwendigen Ressourcen und Tools, um die Anforderungen des Projekts effizient zu erfüllen.
 
 # Qualitätsanforderungen
 
-<div class="formalpara-title">
 
-**Inhalt**
-
-</div>
-
-Dieser Abschnitt enthält möglichst alle Qualitätsanforderungen als
-Qualitätsbaum mit Szenarien. Die wichtigsten davon haben Sie bereits in
-Abschnitt 1.2 (Qualitätsziele) hervorgehoben.
-
-Nehmen Sie hier auch Qualitätsanforderungen geringerer Priorität auf,
-deren Nichteinhaltung oder -erreichung geringe Risiken birgt.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Weil Qualitätsanforderungen die Architekturentscheidungen oft maßgeblich
-beeinflussen, sollten Sie die für Ihre Stakeholder relevanten
-Qualitätsanforderungen kennen, möglichst konkret und operationalisiert.
-
-<div class="formalpara-title">
-
-**Weiterführende Informationen**
-
-</div>
-
-Siehe [Qualitätsanforderungen](https://docs.arc42.org/section-10/) in
-der online-Dokumentation (auf Englisch!).
 
 ## Qualitätsbaum
 
-<div class="formalpara-title">
 
-**Inhalt**
-
-</div>
-
-Der Qualitätsbaum (à la ATAM) mit Qualitätsszenarien an den Blättern.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Die mit Prioritäten versehene Baumstruktur gibt Überblick über
-die — oftmals zahlreichen — Qualitätsanforderungen.
-
--   Baumartige Verfeinerung des Begriffes „Qualität“, mit „Qualität“
-    oder „Nützlichkeit“ als Wurzel.
-
--   Mindmap mit Qualitätsoberbegriffen als Hauptzweige
-
-In jedem Fall sollten Sie hier Verweise auf die Qualitätsszenarien des
-folgenden Abschnittes aufnehmen.
 
 ## Qualitätsszenarien
 
 <div class="formalpara-title">
 
-**Inhalt**
-
-</div>
-
-Konkretisierung der (in der Praxis oftmals vagen oder impliziten)
-Qualitätsanforderungen durch (Qualitäts-)Szenarien.
-
-Diese Szenarien beschreiben, was beim Eintreffen eines Stimulus auf ein
-System in bestimmten Situationen geschieht.
-
-Wesentlich sind zwei Arten von Szenarien:
-
--   Nutzungsszenarien (auch bekannt als Anwendungs- oder
-    Anwendungsfallszenarien) beschreiben, wie das System zur Laufzeit
-    auf einen bestimmten Auslöser reagieren soll. Hierunter fallen auch
-    Szenarien zur Beschreibung von Effizienz oder Performance. Beispiel:
-    Das System beantwortet eine Benutzeranfrage innerhalb einer Sekunde.
-
--   Änderungsszenarien beschreiben eine Modifikation des Systems oder
-    seiner unmittelbaren Umgebung. Beispiel: Eine zusätzliche
-    Funktionalität wird implementiert oder die Anforderung an ein
-    Qualitätsmerkmal ändert sich.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Szenarien operationalisieren Qualitätsanforderungen und machen deren
-Erfüllung mess- oder entscheidbar.
-
-Insbesondere wenn Sie die Qualität Ihrer Architektur mit Methoden wie
-ATAM überprüfen wollen, bedürfen die in Abschnitt 1.2 genannten
-Qualitätsziele einer weiteren Präzisierung bis auf die Ebene von
-diskutierbaren und nachprüfbaren Szenarien.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-Entweder tabellarisch oder als Freitext.
 
 # Risiken und technische Schulden
 
