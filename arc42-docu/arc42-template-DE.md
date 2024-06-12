@@ -699,36 +699,27 @@ online-Dokumentation (auf Englisch!).
 
 <div class="formalpara-title">
 
-**Inhalt**
+## Inhalt
 
-</div>
+Die wesentlichen fachlichen und technischen Begriffe, die Stakeholder im Zusammenhang mit dem System verwenden. Nutzen Sie das Glossar ebenfalls als Übersetzungsreferenz, falls Sie in mehrsprachigen Teams arbeiten.
 
-Die wesentlichen fachlichen und technischen Begriffe, die Stakeholder im
-Zusammenhang mit dem System verwenden.
+## Motivation
 
-Nutzen Sie das Glossar ebenfalls als Übersetzungsreferenz, falls Sie in
-mehrsprachigen Teams arbeiten.
+Relevante Begriffe sollten klar definiert werden, damit alle Beteiligten diese Begriffe identisch verstehen und vermeiden, mehrere Begriffe für die gleiche Sache zu verwenden.
 
-<div class="formalpara-title">
+### Glossar
 
-**Motivation**
+| Begriff                 | Definition                                                                                                                                   |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| API                     | Schnittstelle zur Kommunikation zwischen verschiedenen Softwareanwendungen.                                                                  |
+| Frontend                | Teil der Anwendung, der direkt mit den Benutzern interagiert.                                                                                |
+| Backend                 | Teil der Anwendung, der auf dem Server läuft und die Geschäftslogik implementiert.                                                           |
+| Deployment              | Prozess des Bereitstellens einer Anwendung auf einem Server.                                                                                 |
+| Authentication          | Verifizierung der Identität eines Benutzers.                                                                                                 |
+| Authorization           | Zuweisung von Rechten und Rollen an einen authentifizierten Benutzer.                                                                        |
+| Continuous Integration  | Automatisierung des Softwareentwicklungsprozesses durch regelmäßige Integration von Codeänderungen.                                          |
+| Continuous Deployment   | Automatisierung der Bereitstellung von Softwareänderungen in die Produktionsumgebung.                                                        |
+| Unit Test               | Test, der einzelne Komponenten einer Anwendung isoliert testet.                                                                              |
+| Browser Compatibility   | Sicherstellung, dass eine Anwendung in verschiedenen Webbrowsern korrekt funktioniert.                                                       |
 
-</div>
 
-Sie sollten relevante Begriffe klar definieren, so dass alle Beteiligten
-
--   diese Begriffe identisch verstehen, und
-
--   vermeiden, mehrere Begriffe für die gleiche Sache zu haben.
-
-Zweispaltige Tabelle mit \<Begriff> und \<Definition>.
-
-Eventuell weitere Spalten mit Übersetzungen, falls notwendig.
-
-Siehe [Glossar](https://docs.arc42.org/section-12/) in der
-online-Dokumentation (auf Englisch!).
-
-| Begriff        | Definition        |
-|----------------|-------------------|
-| *\<Begriff-1>* | *\<Definition-1>* |
-| *\<Begriff-2*  | *\<Definition-2>* |
